@@ -1,11 +1,17 @@
-const http = require('node:http');   // thư viện có sẵn ở nodejs
-const hostname = '127.0.0.1';  // localhost  1~25
-const port = 3000;    // 0~60355   
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World\n dau buoi de rach');
-});
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+const express = require('express')
+const app = express()
+const port = 8080
+// config template engine 
+app.set('views', './src/views')
+app.set('view engine', 'ejs')
+// khai bao router
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
+app.get('/abcd', (req, res) => {
+    res.render('sample.ejs')
+})
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
