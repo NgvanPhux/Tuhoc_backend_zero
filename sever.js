@@ -4,13 +4,20 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 8080;// port   => hardcode ( bien cung khi thay doi phai doi nhieu > can file env)
 const hostname = process.env.HOST_NAME;
+const path = require('path')
 // config template engine 
 app.set('views', './src/views/');
 // app.set('views',path.join(__dirname,'view'));
 app.set('view engine', 'ejs');
-// khai bao router
+
+//config static file
+//app.use(express.static('public'))
+app.use(express.static('./src/public'))
+
+
+// khai bao router  
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('Hello World!  dsdsaadsads')
 });
 
 app.get('/abcd', (req, res) => {
