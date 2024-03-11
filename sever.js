@@ -10,10 +10,9 @@ const { config } = require('process');
 const router = require('./src/route/web');
 const webroute = require('./src/route/web');
 
+
+// config template engine
 configviewengine(app);
-
-
-
 
 // khai bao router  
 app.use('/ver1', webroute);
