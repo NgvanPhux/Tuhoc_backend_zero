@@ -7,7 +7,8 @@ const port = process.env.PORT || 8080;// port   => hardcode ( bien cung khi thay
 const hostname = process.env.HOST_NAME;
 const path = require('path');
 const { config } = require('process');
-
+const router = require('./src/route/web');
+const webroute = require('./src/route/web');
 
 configviewengine(app);
 
@@ -15,13 +16,8 @@ configviewengine(app);
 
 
 // khai bao router  
-app.get('/', (req, res) => {
-    res.send('Hello World!  dsdsaadsads')
-});
+app.use('/ver1', webroute);
 
-app.get('/abcd', (req, res) => {
-    res.render('sample.ejs')
-});
 app.listen(port, hostname, () => {
     console.log(`Example app listening on port ${port}`)
 });
