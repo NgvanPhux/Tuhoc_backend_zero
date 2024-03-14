@@ -6,40 +6,103 @@
     <title>home page</title>
     <link rel="stylesheet" href="./css/styles.css" />
 </head>
+<style>
+    .table-container {
+        padding: 15px 20px;
+    }
+
+    .title {
+        padding-top: 50;
+        font-size: 25px;
+        font-weight: 600;
+        padding-bottom: 10px;
+    }
+
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+        background-color: coral;
+    }
+</style>
 
 <body>
 
     <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+
+        <a class="active" href="/">Home</a>
+        <a href="/create">create user </a>
+
     </div>
+    <div class="table-container">
+        <!-- <%= JSON.stringify(listuser) %> -->
+        <div class="title"> List user</div>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>email</th>
+                <th>name</th>
+                <th>city</th>
+                <th>action</th>
 
 
 
+                <!-- <% for (let i=0; i < listuser.length; i++) { %>
+            <tr>
+            <td>
+                <%= listuser[i].id %>
+            </td>
+            <td>
+                <%= listuser[i].email %>
+            </td>
+            <td>
+                <%= listuser[i].name %>
+            </td>
+            <td>
+                <%= listuser[i].city %>
+            </td>
+            <td>
+                <button>Edit</button>
+                <button>delete</button>
+            </td>
+            </tr>
+            <% } %> -->
 
-    <div class="formthemmoi">
-        <fieldset>
-            <legend>form add new user </legend>
+                <% listuser.forEach(function(user) { %>
+            <tr>
+                <td>
+                    <%= user.id %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <%= user.name %>
+                </td>
+                <td>
+                    <%= user.city %>
+                </td>
+                <td>
+                    <button>Edit</button>
+                    <button>delete</button>
+                </td>
+            </tr>
+            <% }); %>
 
 
-            <div class="input-group">
-                <label> email </label>
-                <input type="text" />
-            </div>
-            <div class="input-group">
-                <label> name </label>
-                <input type="text" />
-            </div>
-            <div class="input-group">
-                <label> city </label>
-                <input type="text" />
-            </div>
-            <div class="btsvadduse">
-                <button> save</button>
-            </div>
-        </fieldset>
+
+        </table>
     </div>
 </body>
 

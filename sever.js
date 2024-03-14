@@ -10,7 +10,9 @@ const { config } = require('process');
 const router = require('./src/route/web');
 const webroute = require('./src/route/web');
 const connection = require('./src/config/database')
-
+//config req. body
+app.use(express.json()) // for json
+app.use(express.urlencoded({ extended: true })) // for form data
 
 
 // config template engine
