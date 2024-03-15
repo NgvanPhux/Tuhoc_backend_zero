@@ -12,8 +12,8 @@
     <div class="topnav">
 
         <a href="/">Home</a>
-        <a href="/create">create user </a>
-        <a class="/update" href="/update">create user </a>
+        <a class="active" href="/create">create user </a>
+        <a href="/update/:id">create user </a>
 
 
 
@@ -27,9 +27,8 @@
         <form action="/update-user" method="POST">
             <fieldset>
                 <legend>form add new user </legend>
-
                 <div class="input-group d-none">
-                    <label> ID </label>
+                    <label> id </label>
                     <input type="text" name="userID" value="<%= useredit.id %>" />
                 </div>
                 <div class="input-group">

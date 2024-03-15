@@ -67,12 +67,15 @@ const postUpdateUser = async (req, res) => {
     let email = req.body.email;
     let myname = req.body.myname;
     let city = req.body.city
+    let userID = req.body.userID
 
     let [results, fields] = await
         connection.query(
-            ` REPLACE INTO  ver1 (email, name, city) VALUES (?, ?, ?) `,
-            [email, myname, city]);
-    console.log(">>>>>>>>>>checkkk:", results);
+            ` UPDATE ver1 SET email =?, name=?, city=?  WHERE id =? `,
+            [email, myname, city, userID]
+
+        );
+
     res.send(' UPDATE user succeed !')
 
 }
