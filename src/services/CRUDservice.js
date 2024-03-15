@@ -8,6 +8,15 @@ const getALLusers = async () => {
 
 
 }
+
+const getuserbyid = async (userID) => {
+    let [results, fields] = await connection.query('select* from ver1 where id=?', [userID])
+    let user = results && results.length > 0 ? results[0] : {};
+    return user;
+
+
+}
+
 module.exports = {
-    getALLusers
+    getALLusers, getuserbyid
 }

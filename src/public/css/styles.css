@@ -16,7 +16,7 @@
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
-    color: #ac1b1b;
+    color: #0f0d0d;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -55,4 +55,8 @@
 
 button {
     cursor: pointer;
+}
+
+.d-none {
+    display: none;
 }

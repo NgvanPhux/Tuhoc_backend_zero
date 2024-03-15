@@ -43,6 +43,7 @@
         <a class="active" href="/">Home</a>
         <a href="/create">create user </a>
 
+
     </div>
     <div class="table-container">
         <!-- <%= JSON.stringify(listuser) %> -->
@@ -94,7 +95,7 @@
                     <%= user.city %>
                 </td>
                 <td>
-                    <button>Edit</button>
+                    <a href="/update/<%= user.id %>"> edit</a>
                     <button>delete</button>
                 </td>
             </tr>
