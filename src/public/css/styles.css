@@ -58,6 +58,6 @@ button {
     cursor: pointer;
 }
 
-.d-none {
+.hide {
     display: none;
 }

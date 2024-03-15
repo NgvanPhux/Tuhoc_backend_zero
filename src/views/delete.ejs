@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete a user</title>
+    <link rel="stylesheet" href="../public/css/styles.css" />
+</head>
+
+<body>
+
+    <div class="topnav">
+
+        <a href="/">Home</a>
+        <a class="active" href="/create">create user </a>
+        <a href="/update/:id">create user </a>
+
+
+
+
+    </div>
+
+
+
+
+    <div class="formthemmoi">
+        <form action="/delete-user" method="POST">
+            <fieldset>
+                <legend>delete -user </legend>
+                <div class="input-group hide">
+                    <label> id </label>
+                    <input type="text" name="userID" value="<%= useredit.id %>" />
+                </div>
+                <div class="input-group">
+                    <label> email </label>
+                    <input type="text" name="email" value="<%= useredit.email %>" />
+                </div>
+                <div class="input-group">
+                    <label> myname </label>
+                    <input type="text" name="myname" value="<%= useredit.name %>" />
+                </div>
+                <div class="input-group">
+                    <label> city </label>
+                    <input type="text" name="city" value="<%= useredit.city %>" />
+                </div>
+                <div class="btsvadduse">
+                    <button> confirm</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+
+</html>
